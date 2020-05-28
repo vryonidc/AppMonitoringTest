@@ -6,7 +6,7 @@ import { version } from "./package.json";
 
 const prodConfig: Configuration = merge(commonConfig, {
     mode: 'production',
-    devtool: 'hidden-source-map',
+    devtool: 'source-map',
     plugins: [
         new SentryWebpackPlugin(
             {

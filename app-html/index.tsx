@@ -18,9 +18,9 @@ function bar() {
 }
 
 function foo() {
-    setImmediate(() => {
+    setTimeout(() => {
         bar();
-    });
+    }, 4000);
 }
 
 console.log(`Version ${appVersion}`);
