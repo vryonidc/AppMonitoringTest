@@ -13,12 +13,18 @@ Sentry.init({
 
 ReactDOM.render(<div>Hello world!</div>, document.getElementById("root"));
 
-function foobar() {
+function bar() {
     throw new Error("testing integration");
+}
+
+function foo() {
+    setImmediate(() => {
+        bar();
+    });
 }
 
 console.log(`Version ${appVersion}`);
 
 setTimeout(() => {
-    foobar();
+    foo();
 }, 5000);
