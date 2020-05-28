@@ -13,6 +13,10 @@ Sentry.init({
 
 ReactDOM.render(<div>Hello world!</div>, document.getElementById("root"));
 
+function baz() {
+    throw new Error("a suspect exception");
+}
+
 function bar() {
     throw new Error("testing integration");
 }
@@ -25,6 +29,10 @@ function foo() {
 
 console.log(`Version ${appVersion}`);
 
+// setTimeout(() => {
+//     foo();
+// }, 5000);
+
 setTimeout(() => {
-    foo();
-}, 5000);
+    baz();
+}, 3000);
