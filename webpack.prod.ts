@@ -4,7 +4,7 @@ import merge from 'webpack-merge';
 
 const prodConfig: Configuration = merge(commonConfig, {
     mode: 'production',
-    devtool: 'source-map',
+    devtool: 'hidden-source-map',
 });
 
 export default prodConfig;

@@ -10,7 +10,8 @@ const commonConfig: Configuration = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].bundle.js'
+        filename: 'public/[name].bundle.js',
+        sourceMapFilename: 'source-maps/[name].bundle.map.js'
     },
     devtool: 'source-map',
     devServer: {
@@ -32,7 +33,8 @@ const commonConfig: Configuration = {
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            template: './app-html/index.html'
+            template: './app-html/index.html',
+            filename: 'public/index.html'
         }),
         new CspHtmlWebpackPlugin({ 'script-src': ["'unsafe-inline'", "'self'", "'unsafe-eval'"] })
     ]
