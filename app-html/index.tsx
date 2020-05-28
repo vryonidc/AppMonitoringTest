@@ -11,6 +11,10 @@ Sentry.init({
 
 ReactDOM.render(<div>Hello world!</div>, document.getElementById("root"));
 
+function foo() {
+    throw new Error("testing integration");
+}
+
 setTimeout(() => {
-  throw new Error("testing integration");
+    foo();
 }, 5000);
