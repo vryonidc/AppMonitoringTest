@@ -2,6 +2,7 @@ import * as path from 'path';
 import { Configuration } from 'webpack';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CspHtmlWebpackPlugin from 'csp-html-webpack-plugin';
 
 const commonConfig: Configuration = {
     entry: {
@@ -13,6 +14,7 @@ const commonConfig: Configuration = {
     },
     devtool: 'source-map',
     devServer: {
+        host: '0.0.0.0',
         writeToDisk: true
     },
     module: {
@@ -31,7 +33,8 @@ const commonConfig: Configuration = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: './app-html/index.html'
-        })
+        }),
+        new CspHtmlWebpackPlugin({ 'script-src': ["'unsafe-inline'", "'self'", "'unsafe-eval'"] })
     ]
 };
 
