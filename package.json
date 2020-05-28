@@ -10,7 +10,7 @@
     "start:dev": "webpack-dev-server --config webpack.dev.ts",
     "start:prod": "webpack-dev-server --config webpack.prod.ts",
     "predeploy": "npm run build:prod",
-    "deploy": "gh-pages -d dist/public"
+    "deploy": "gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
